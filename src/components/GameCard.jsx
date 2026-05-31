@@ -11,14 +11,6 @@ function GameCard({ game }) {
 
       <p>{game.description}</p>
 
-      <div className="tech-tags">
-        {game.tech.map((tech) => (
-          <span key={tech} className="tag">
-            {tech}
-          </span>
-        ))}
-      </div>
-
       <div className="buttons">
         <a
           href={game.playUrl}
