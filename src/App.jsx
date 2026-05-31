@@ -1,8 +1,20 @@
+import { useState } from "react";
 import "./App.css";
 import { games } from "./data/games";
 import GameCard from "./components/GameCard";
 
 function App() {
+  const [searchText, setSearchText] = useState("");
+  const filteredGames = games.filter((game) =>
+    [
+      game.title,
+      game.description,
+      game.tech.join(" ")
+    ]
+      .join(" ")
+      .toLowerCase()
+      .includes(searchText.toLowerCase())
+  );
   return (
     <div className="container">
       <header>
@@ -10,8 +22,18 @@ function App() {
         <p>自作ゲーム一覧</p>
       </header>
 
+      <div className="search-area">
+        <input
+          type="text"
+          placeholder="ゲーム名で検索..."
+          value={searchText}
+          onChange={(e) => setSearchText(e.target.value)}
+          className="search-input"
+        />
+      </div>
+
       <div className="game-grid">
-        {games.map((game) => (
+        {filteredGames.map((game) => (
           <GameCard
             key={game.id}
             game={game}
