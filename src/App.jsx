@@ -18,8 +18,14 @@ function App() {
   return (
     <div className="container">
       <header>
-        <h1>My Games</h1>
-        <p>自作ゲーム一覧</p>
+        <h1>白うさぎのゲーム小屋</h1>
+        <div className="cloud-comment">
+          <h3>ありきたり</h3>
+        </div>
+        <span className="dot dot1"></span>
+        <span className="dot dot2"></span>
+        <span className="dot dot3"></span>
+        <p>ゲーム一覧</p>
       </header>
 
       <div className="search-area">

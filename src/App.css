@@ -176,6 +176,52 @@ header p {
   border-color: #888888;
 }
 
+header {
+  position: relative;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.cloud-comment {
+  position: absolute;
+  top: -50px;
+  right: 260px;
+
+  background: #ececec;
+  /*border: 2px solid #555;*/
+  border-radius: 999px;
+  padding: 8px 12px;
+}
+
+.dot {
+  position: absolute;
+  background: white;
+  border: 2px solid #555;
+  border-radius: 50%;
+}
+
+.dot1 {
+  width: 16px;
+  height: 16px;
+  bottom: 68px;
+  right: 365px;
+}
+
+.dot2 {
+  width: 12px;
+  height: 12px;
+  bottom: 64px;
+  right: 390px;
+}
+
+.dot3 {
+  width: 8px;
+  height: 8px;
+  bottom: 60px;
+  right: 410px;
+}
+
+
 /* #root {
   max-width: 1280px;
   margin: 0 auto;
