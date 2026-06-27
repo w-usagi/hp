@@ -1,9 +1,12 @@
 import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import "./i18n";
 import "./App.css";
 import GameCard from "./components/GameCard";
 import { useGithubGames } from "./hooks/useGithubGames";
 
 function App() {
+  const { t } = useTranslation();
   const [searchText, setSearchText] = useState("");
   const games = useGithubGames();
   const filteredGames = games.filter((game) =>
@@ -16,22 +19,29 @@ function App() {
       .includes(searchText.toLowerCase())
   );
   return (
+    <>
     <div className="container">
       <header>
-        <h1>白うさぎのゲーム小屋</h1>
-        <div className="cloud-comment">
-          <h3>ありきたり</h3>
+        <div className="title-wrap">
+          {/* ★吹き出しをここ（title-wrapの中）に移動 */}
+          <div className="thought-bubble">
+            <div className="cloud-comment">
+              <h3>{t("bubble")}</h3>
+            </div>
+            <span className="dot dot1"></span>
+            <span className="dot dot2"></span>
+            <span className="dot dot3"></span>
+          </div>
+
+          <h1>{t("title")}</h1>
+          <p>{t("note")}</p>
         </div>
-        <span className="dot dot1"></span>
-        <span className="dot dot2"></span>
-        <span className="dot dot3"></span>
-        <p>ゲーム一覧</p>
-      </header>
+    </header>
 
       <div className="search-area">
         <input
           type="text"
-          placeholder="ゲーム名で検索..."
+          placeholder={t("search")}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
           className="search-input"
@@ -47,6 +57,7 @@ function App() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
