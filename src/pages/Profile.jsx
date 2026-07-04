@@ -1,19 +1,30 @@
 function Profile() {
   return (
     <div className="container">
-      <h1>プロフィール</h1>
+        <h1>プロフィール</h1>
 
-      <img
-        src="https://github.com/github.png"
-        alt="profile"
-        width="150"
-      />
+      <div className="profile-content">
+        <img
+          src="w-usagi.svg"
+          alt="profile"
+          width="150"
+          className="profile-image"
+        />
 
-      <h2>あなたの名前</h2>
-
-      <p>
-        Reactとゲームが好きなエンジニアです。
-      </p>
+        <dl className="profile-info">
+            <dt>名前</dt>
+            <dd className="name-value">
+                <span className="hidden-name">バナナの</span>
+                <span className="main-name">白うさぎ</span>
+            </dd>
+            <dt>出身</dt>
+            <dd>日本</dd>
+            <dt>目標</dt>
+            <dd>松田好花さんに自作ゲームを遊んでもらうこと</dd>
+            <dt>その他</dt>
+            <dd>アイコンの白うさぎは、伏黒の脱兎がモチーフです...</dd>
+        </dl>
+      </div>
     </div>
   );
 }

@@ -151,6 +151,23 @@ header p {
   .game-image {
     height: 180px;
   }
+
+  .profile-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .profile-info {
+    width: 100%;
+  }
+}
+
+@media (hover: hover) {
+  .name-value:hover .hidden-name {
+    width: 4em;
+    opacity: 1;
+  }
 }
 
 .search-area {
@@ -317,3 +334,74 @@ footer {
   z-index: 998;
 }
 
+.profile-content {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+}
+
+.profile-image {
+  width: 150px;
+  height: 150px;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.profile-info {
+  flex: 1;
+  margin-left: 100px;
+}
+
+.profile-info p {
+  margin-top: 0;
+  line-height: 1.8;
+  font-size: 20px;
+}
+
+.hidden-name {
+  color: #f8f8f8; /* bodyの背景色と同じ */
+  transition: color 0.3s ease;
+}
+
+.hidden-name:hover {
+  color: inherit;
+}
+
+.profile-note {
+  font-size: 0.8rem;
+  color: #666;
+  margin-top: -8px;
+  margin-bottom: 12px;
+}
+
+.label {
+  display: inline-block;
+  width: 120px;
+  font-weight: bold;
+}
+
+.name-value {
+  display: inline-flex;
+  align-items: center;
+}
+
+.hidden-name {
+  width: 0;
+  overflow: hidden;
+
+  opacity: 0;
+  white-space: nowrap;
+
+  transition:
+    width 0.3s ease,
+    opacity 0.3s ease;
+}
+
+.name-value:hover .hidden-name {
+  width: 4em; /* 「バナナの」が入る幅 */
+  opacity: 1;
+}
+
+.main-name {
+  transition: transform 0.3s ease;
+}
